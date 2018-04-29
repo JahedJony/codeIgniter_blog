@@ -3,7 +3,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Free HTML5 Bootstrap Admin Template</title>
+	<title>Admin Panel</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -75,7 +75,7 @@
 		</div>
 	</div>
 	<!-- topbar ends -->
-		<div class="container-fluid">
+	<div class="container-fluid">
 		<div class="row-fluid">
 
 			<!-- left menu starts -->
@@ -178,7 +178,7 @@
 	<!-- library for cookie management -->
 	<script src="<?php echo base_url();?>js/3rd-party/jquery.cookie.js"></script>
 	<!-- calander plugin -->
-	<script src='<?php echo base_url();?>js/3rd-party/fullcalendar.js'></script>
+	<script src='<?php echo base_url();?>js/3rd-party/fullcalendar.min.js'></script>
 	<!-- data table plugin -->
 	<script src='<?php echo base_url();?>js/3rd-party/jquery.dataTables.min.js'></script>
 

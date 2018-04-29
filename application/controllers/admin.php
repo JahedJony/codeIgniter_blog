@@ -16,12 +16,9 @@ class Admin extends CI_Controller {
 	
 	public function admin_login_check(){
 		$data = array();
-
 		$admin_email = $this->input->post('admin_email',true);
 		$admin_password = $this->input->post('admin_password',true);
-		
-		$this->load->model('admin_model','a_model');
-		$result = $this->a_model->admin_login_check_info($admin_email,$admin_password);
+		$result = $this->admin_model->admin_login_check_info($admin_email,$admin_password);
 
 		$sdata = array();
 		if($result){
