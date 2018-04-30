@@ -26,4 +26,18 @@ class Super_admin_model extends CI_Model {
 		$this->db->where('category_id',$category_id);
 		$this->db->update('tbl_category');
 	}
+	
+	public function delete_category_info($category_id){
+		$this->db->where('category_id',$category_id);
+		$this->db->delete('tbl_category');
+	}
+	
+	public function edit_category_info_by_id($category_id){
+		$this->db->select('*');
+		$this->db->from('tbl_category');
+		$this->db->where('category_id',$category_id);
+		$query_result = $this->db->get();
+		$result = $query_result->row();
+		return $result;
+	}
 }

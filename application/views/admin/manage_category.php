@@ -52,10 +52,10 @@
 						<?php
 						}
 						?>	
-						<a class="btn btn-info" href="#">
-							<i class="icon-edit icon-white" title="Edit"></i>
+						<a class="btn btn-info" href="<?php echo base_url(); ?>super_admin/edit_category/<?php echo $v_category->category_id;?>" title="Edit">
+							<i class="icon-edit icon-white"></i>
 						</a>
-						<a class="btn btn-danger" href="#" title="Delete">
+						<a class="btn btn-danger" href="<?php echo base_url(); ?>super_admin/delete_category/<?php echo $v_category->category_id;?>" title="Delete">
 							<i class="icon-trash icon-white"></i>
 						</a>
 					</td>
