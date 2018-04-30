@@ -12,9 +12,9 @@
 				?>
 			</h3>
 			<div class="control-group">
-				<label class="control-label" for="typeahead">Category Name </label>
+				<label class="control-label" for="typeahead">Category Name <em style="color:red">*</em></label>
 				<div class="controls">
-					<input type="text" class="span6 typeahead" name="category_name" id="category_name">
+					<input type="text" class="span6 typeahead" name="category_name" id="category_name" required>
 				</div>
 			</div>
 			<div class="control-group">

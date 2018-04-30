@@ -85,7 +85,7 @@
 						<li class="nav-header hidden-tablet">Main</li>
 						<li><a class="ajax-link" href="<?php echo base_url(); ?>super_admin"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
 						<li><a class="ajax-link" href="<?php echo base_url(); ?>super_admin/add_category"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add Category</span></a></li>
-						<li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
+						<li><a class="ajax-link" href="<?php echo base_url(); ?>super_admin/manage_category"><i class="icon-edit"></i><span class="hidden-tablet"> Manage Category</span></a></li>
 						<li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
 						<li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
 						<li><a class="ajax-link" href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>

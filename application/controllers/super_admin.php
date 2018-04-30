@@ -31,9 +31,15 @@ class Super_Admin extends CI_Controller {
 		$this->super_admin_model->save_category_info($data);
 		
 		$sdata = array();
-		$sdata['message'] = "Save Successfully";
+		$sdata['message'] = "Category Information Saved Successfully";
 		$this->session->set_userdata($sdata);		
 		redirect('super_admin/add_category');
+	}
+	
+	public function manage_category(){
+		$data = array();
+		$data['admin_maincontent'] = $this->load->view('admin/manage_category','',true);
+		$this->load->view('admin/admin_master',$data);
 	}
 	
 	public function logout(){
