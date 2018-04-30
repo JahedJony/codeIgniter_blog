@@ -37,9 +37,20 @@ class Super_Admin extends CI_Controller {
 	}
 	
 	public function manage_category(){
-		$data = array();
-		$data['admin_maincontent'] = $this->load->view('admin/manage_category','',true);
+		$data = array();		
+		$data['all_category'] = $this->super_admin_model->select_all_category();
+		$data['admin_maincontent'] = $this->load->view('admin/manage_category',$data,true);
 		$this->load->view('admin/admin_master',$data);
+	}
+	
+	public function unpublished_category($category_id){
+		$this->super_admin_model->update_category_to_unpublished($category_id);
+		redirect('super_admin/manage_category');
+	}
+	
+	public function published_category($category_id){
+		$this->super_admin_model->update_category_to_published($category_id);
+		redirect('super_admin/manage_category');
 	}
 	
 	public function logout(){
