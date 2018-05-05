@@ -1,5 +1,5 @@
 <div class="box-content">
-	<form class="form-horizontal" name="edit_category_form" action="<?php echo base_url(); ?>super_admin/save_category" method="post">
+	<form class="form-horizontal" id="edit_category_form" name="edit_category_form" action="<?php echo base_url(); ?>super_admin/save_category" method="post">
 		<fieldset>
 			<legend>Edit Category</legend>
 			<h3 style="color:green">
@@ -40,6 +40,7 @@
 		</fieldset>
 	</form>
 </div>
-<script type="test/javascript">
-	document.forms['edit_category_form'].elements['status'].value = '<?php echo $category_info->category_name ?>';
+
+<script>
+	document.forms['edit_category_form'].elements["status"].value='<?php echo $category_info->publication_status ?>';
 </script>
