@@ -37,17 +37,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('master',$data);
 	}
 	
-	public function blog(){
-		$data = array();
-		$data['all_published_category'] = $this->welcome_model->all_published_category();
-		$data['maincontent'] = $this->load->view('blog_content','',true);
-		$data['title'] = 'Blog';
-		$data['slider'] = 1;
-		$data['menu'] = 1;
-		$data['sponsor'] = 1;
-		$this->load->view('master',$data);
-	}
-	
 	public function contact(){
 		$data = array();
 		$data['all_published_category'] = $this->welcome_model->all_published_category();
@@ -64,6 +53,18 @@ class Welcome extends CI_Controller {
 		$data['blog_info'] = $this->welcome_model->select_blog_info_by_id($blog_id);
 		$data['all_published_category'] = $this->welcome_model->all_published_category();
 		$data['maincontent'] = $this->load->view('blog_details',$data,true);
+		$data['title'] = 'Blog';
+		$data['slider'] = 1;
+		$data['menu'] = 1;
+		$data['sponsor'] = 1;
+		$this->load->view('master',$data);
+	}
+	
+	public function category_blog($category_id){
+		$data = array();
+		$data['category_info'] = $this->welcome_model->select_blog_info_by_category_id($category_id);
+		$data['all_published_category'] = $this->welcome_model->all_published_category();
+		$data['maincontent'] = $this->load->view('category_blog',$data,true);
 		$data['title'] = 'Blog';
 		$data['slider'] = 1;
 		$data['menu'] = 1;

@@ -33,4 +33,14 @@ class Welcome_model extends CI_Model {
 		$result = $query_result->row();
 		return $result;
 	}
+	
+	public function select_blog_info_by_category_id($category_id){
+		$this->db->select('*');
+		$this->db->from('tbl_blog');
+		$this->db->join('tbl_category', 'tbl_category.category_id = tbl_blog.category_id', 'left');
+		$this->db->where('tbl_blog.category_id',$category_id);
+		$query_result = $this->db->get();
+		$result = $query_result->result();
+		return $result;
+	}
 }

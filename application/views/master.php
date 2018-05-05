@@ -68,7 +68,7 @@
 			<?php
 				foreach($all_published_category as $v_category){ 
 			?>
-            <li><a href="#"><?php echo $v_category->category_name; ?></a></li>
+            <li><a href="<?php echo base_url(); ?>/welcome/category_blog/<?php echo $v_category->category_id; ?>"><?php echo $v_category->category_name; ?></a></li>
 			<?php 
 			} 
 			?>
