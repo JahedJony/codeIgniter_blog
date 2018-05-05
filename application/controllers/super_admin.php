@@ -65,6 +65,20 @@ class Super_Admin extends CI_Controller {
 		$this->load->view('admin/admin_master',$data);
 	}
 	
+	public function update_category(){
+		$data = array();		
+		$category_id = $this->input->post('category_id',true);
+		$data['category_name'] = $this->input->post('category_name',true);
+		$data['category_description'] = $this->input->post('category_description',true);
+		$data['publication_status'] = $this->input->post('publication_status',true);
+		$this->super_admin_model->update_category_info($data,$category_id);
+		redirect('super_admin/manage_category');
+	}
+	
+	public function add_blog(){
+
+	}
+	
 	public function logout(){
 		$this->session->unset_userdata('admin_id');
 		$this->session->unset_userdata('admin_full_name');

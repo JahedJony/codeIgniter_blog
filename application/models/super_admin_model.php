@@ -40,4 +40,9 @@ class Super_admin_model extends CI_Model {
 		$result = $query_result->row();
 		return $result;
 	}
+	
+	public function update_category_info($data,$category_id){
+		$this->db->where('category_id', $category_id);
+		$this->db->update('tbl_category', $data);
+	}
 }
