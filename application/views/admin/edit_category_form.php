@@ -28,7 +28,7 @@
 				<label class="control-label" for="textarea2">Publication Status</label>
 				<div class="controls">
 					<select name="publication_status">
-						<option>Select Option</option>
+						<option>Select Publication Status</option>
 						<option value="1">Published</option>
 						<option value="0">UnPublished</option>
 					</select>

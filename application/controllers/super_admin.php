@@ -76,7 +76,26 @@ class Super_Admin extends CI_Controller {
 	}
 	
 	public function add_blog(){
-
+		$data = array();
+		$data['all_published_category'] = $this->welcome_model->all_published_category();
+		$data['admin_maincontent'] = $this->load->view('admin/add_blog_form',$data,true);
+		$this->load->view('admin/admin_master',$data);		
+	}
+	
+	public function save_blog(){
+		$data = array();
+		$data['blog_title'] = $this->input->post('blog_title',true);
+		$data['category_id'] = $this->input->post('category_id',true);
+		$data['blog_short_description'] = $this->input->post('blog_short_description',true);
+		$data['blog_long_description'] = $this->input->post('blog_long_description',true);
+		$data['publication_status'] = $this->input->post('publication_status',true);
+		$data['author_name'] = $this->session->userdata('admin_full_name');
+		$this->super_admin_model->save_blog_info($data);
+		
+		$sdata = array();
+		$sdata['message'] = "Blog Information Saved Successfully";
+		$this->session->set_userdata($sdata);		
+		redirect('super_admin/add_blog');	
 	}
 	
 	public function logout(){
