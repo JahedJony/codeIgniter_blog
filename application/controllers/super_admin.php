@@ -98,6 +98,48 @@ class Super_Admin extends CI_Controller {
 		redirect('super_admin/add_blog');	
 	}
 	
+	public function manage_blog(){
+		$data = array();		
+		$data['all_blog'] = $this->super_admin_model->select_all_blog();
+		$data['admin_maincontent'] = $this->load->view('admin/manage_blog',$data,true);
+		$this->load->view('admin/admin_master',$data);
+	}
+	
+	public function unpublished_blog($blog_id){
+		$this->super_admin_model->update_blog_to_unpublished($blog_id);
+		redirect('super_admin/manage_blog');
+	}
+	
+	public function published_blog($blog_id){
+		$this->super_admin_model->update_blog_to_published($blog_id);
+		redirect('super_admin/manage_blog');
+	}
+	
+	public function delete_blog($blog_id){
+		$this->super_admin_model->delete_blog_info($blog_id);
+		redirect('super_admin/manage_blog');
+	}
+	
+	public function edit_blog($blog_id){
+		$data = array();		
+		$data['blog_info'] = $this->super_admin_model->edit_blog_info_by_id($blog_id);
+		$data['all_published_category'] = $this->super_admin_model->select_all_published_category();
+		$data['admin_maincontent'] = $this->load->view('admin/edit_blog_form',$data,true);
+		$this->load->view('admin/admin_master',$data);
+	}
+	
+	public function update_blog(){
+		$data = array();		
+		$blog_id = $this->input->post('blog_id',true);
+		$data['blog_title'] = $this->input->post('blog_title',true);
+		$data['category_id'] = $this->input->post('category_id',true);
+		$data['blog_short_description'] = $this->input->post('blog_short_description',true);
+		$data['blog_long_description'] = $this->input->post('blog_long_description',true);
+		$data['publication_status'] = $this->input->post('publication_status',true);
+		$this->super_admin_model->update_blog_info($data,$blog_id);
+		redirect('super_admin/manage_blog');
+	} 
+	
 	public function logout(){
 		$this->session->unset_userdata('admin_id');
 		$this->session->unset_userdata('admin_full_name');

@@ -87,7 +87,7 @@
 						<li><a class="ajax-link" href="<?php echo base_url(); ?>super_admin/add_category"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add Category</span></a></li>
 						<li><a class="ajax-link" href="<?php echo base_url(); ?>super_admin/manage_category"><i class="icon-edit"></i><span class="hidden-tablet"> Manage Category</span></a></li>
 						<li><a class="ajax-link" href="<?php echo base_url(); ?>super_admin/add_blog"><i class="icon-list-alt"></i><span class="hidden-tablet"> Add Blog</span></a></li>
-						<li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
+						<li><a class="ajax-link" href="<?php echo base_url(); ?>/super_admin/manage_blog"><i class="icon-font"></i><span class="hidden-tablet"> Manage Blog</span></a></li>
 						<li><a class="ajax-link" href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
 						<li class="nav-header hidden-tablet">Sample Section</li>
 						<li><a class="ajax-link" href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
