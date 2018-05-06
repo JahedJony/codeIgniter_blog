@@ -52,7 +52,7 @@ class Super_admin_model extends CI_Model {
 	}
 	
 	public function select_all_blog(){
-		$this->db->select('*');
+		$this->db->select('tbl_blog.*,tbl_category.category_name,tbl_category.category_id');
 		$this->db->from('tbl_blog');
 		$this->db->join('tbl_category', 'tbl_category.category_id = tbl_blog.category_id', 'left');
 		
