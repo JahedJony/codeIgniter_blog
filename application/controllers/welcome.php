@@ -48,6 +48,17 @@ class Welcome extends CI_Controller {
 		$this->load->view('master',$data);
 	}
 	
+	public function sign_up(){
+		$data = array();
+		$data['all_published_category'] = $this->welcome_model->all_published_category();
+		$data['maincontent'] = $this->load->view('sign_up','',true);
+		$data['title'] = 'Sign Up';
+		$data['slider'] = '';
+		$data['menu'] = 1;
+		$data['sponsor'] = 1;
+		$this->load->view('master',$data);
+	}
+	
 	public function blog_details($blog_id){
 		$data = array();
 		$data['blog_info'] = $this->welcome_model->select_blog_info_by_id($blog_id);
@@ -70,5 +81,13 @@ class Welcome extends CI_Controller {
 		$data['menu'] = 1;
 		$data['sponsor'] = 1;
 		$this->load->view('master',$data);
+	}
+	
+	public function save_user(){
+		$data = array();
+		$data['user_name'] = $this->input->post('user_name',true);
+		$data['user_email'] = $this->input->post('user_email',true);
+		$data['user_password'] = $this->input->post('user_password',true);
+		$this->welcome_model->save_user_info($data);
 	}
 }

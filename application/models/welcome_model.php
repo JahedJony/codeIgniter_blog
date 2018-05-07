@@ -48,4 +48,13 @@ class Welcome_model extends CI_Model {
 		$result = $query_result->result();
 		return $result;
 	}
+	
+	public function save_user_info($data){
+		$this->db->insert('tbl_user',$data);
+		
+		$sdata=array();
+		$sdata['message'] = 'Registration Successfull, You may login now !!';
+		$this->session->set_userdata($sdata);
+		redirect('welcome/sign_up');
+	}
 }

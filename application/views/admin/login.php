@@ -3,7 +3,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Free HTML5 Bootstrap Admin Template</title>
+	<title>Admin Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -33,7 +33,7 @@
 		<div class="row-fluid">
 			<div class="row-fluid">
 				<div class="span12 center login-header">
-					<h2>Welcome to Charisma</h2>
+					<h2>Welcome to Admin Panel</h2>
 				</div><!--/span-->
 			</div><!--/row-->
 			<div class="row-fluid">
@@ -62,12 +62,12 @@
 					<form class="form-horizontal" action="<?php echo base_url(); ?>admin/admin_login_check" method="post">
 						<fieldset>
 							<div class="input-prepend" title="Username" data-rel="tooltip">
-								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="admin_email" id="admin_email" type="text" value="admin email" />
+								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="admin_email" id="admin_email" type="text" value="email" />
 							</div>
 							<div class="clearfix"></div>
 
 							<div class="input-prepend" title="Password" data-rel="tooltip">
-								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="admin_password" id="admin_password" type="password" value="admin123456" />
+								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="admin_password" id="admin_password" type="password" value="123456" />
 							</div>
 							<div class="clearfix"></div>
 
@@ -77,7 +77,6 @@
 								</div>
 								<div class="clearfix"></div>
 							</div>
-
 							<p class="center span5">
 								<button type="submit" class="btn btn-primary" id="login">Login</button>
 							</p>

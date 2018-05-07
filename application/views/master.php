@@ -23,8 +23,10 @@
           <li class="active"><a href="<?php echo base_url();?>welcome/index"><span>Home Page</span></a></li>
           <li><a href="<?php echo base_url();?>welcome/support"><span>Support</span></a></li>
           <li><a href="<?php echo base_url();?>welcome/about"><span>About Us</span></a></li>
-          <li><a href="<?php echo base_url();?>welcome/blog"><span>Blog</span></a></li>
-          <li><a href="<?php echo base_url();?>welcome/contact"><span>Contact Us</span></a></li>
+          <!--<li><a href="<?php echo base_url();?>welcome/blog"><span>Blog</span></a></li>
+          <li><a href="<?php echo base_url();?>welcome/contact"><span>Contact Us</span></a></li>-->
+          <li><a href="<?php echo base_url();?>welcome/login"><span>Login</span></a></li>
+          <li><a href="<?php echo base_url();?>welcome/sign_up"><span>Sign Up</span></a></li>
         </ul>
       </div>
       <div class="clr"></div>
