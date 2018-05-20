@@ -89,5 +89,26 @@ class Welcome extends CI_Controller {
 		$data['user_email'] = $this->input->post('user_email',true);
 		$data['user_password'] = $this->input->post('user_password',true);
 		$this->welcome_model->save_user_info($data);
+
+		$sdata['message'] = 'Registration Successfully. You May Login Now !';
+		$this->session->set_userdata($sdata);
+		redirect ('welcome/sign_up');
+	}
+	
+	public function login(){
+		$data = array();
+		$data['all_published_category'] = $this->welcome_model->all_published_category();
+		$data['maincontent'] = $this->load->view('login','',true);
+		$data['title'] = 'Login';
+		$data['slider'] = '';
+		$data['menu'] = 1;
+		$data['sponsor'] = 1;
+		$this->load->view('master',$data);
+	}
+	
+	public function user_login_check(){
+		$data = array();
+		$data['user_email']=$this->input->post('user_email',true);
+		$data['user_password']=$this->input->post('user_email',true);
 	}
 }

@@ -1,6 +1,15 @@
 <div class="article">
-  <h2><span>Sign Up Now!</span></h2>
-  <div class="clr"></div>
+	<h2><span>Sign Up Now!</span></h2>
+	<h3 style="color:green">
+		<?php
+			$msg=$this->session->userdata('message');
+			if($msg){
+				echo $msg;
+				$this->session->unset_userdata('message');
+			}
+		?>
+	</h3>
+	<div class="clr"></div>
 </div>
 <div class="article">
   <h2><span>Provide the information below</span></h2>
