@@ -45,7 +45,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="<?php echo base_url();?>img/logo20.png" /> <span>Charisma</span></a>
+				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="<?php echo base_url();?>img/logo20.png" /> <span>JB Admin</span></a>
 
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" >

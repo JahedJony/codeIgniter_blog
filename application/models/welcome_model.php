@@ -57,4 +57,37 @@ class Welcome_model extends CI_Model {
 		$this->session->set_userdata($sdata);
 		redirect('welcome/sign_up');
 	}
+	
+	public function user_login_check_info($user_email,$user_password){
+		$this->db->select('*');
+		$this->db->from('tbl_user');
+		$this->db->where('user_email',$user_email);
+		$this->db->where('user_password',$user_password);
+		$query_result = $this->db->get();
+		$result = $query_result->row();
+		return $result;
+	}
+	
+	public function save_comments($data){
+		$this->db->insert('tbl_comments',$data);		
+	}
+	
+	public function select_comments_by_blog_id($blog_id){
+		$this->db->select('*');
+		$this->db->from('tbl_comments');
+		$this->db->where('publication_status',1);
+		$this->db->where('blog_id',$blog_id);
+		
+		$query_result = $this->db->get();
+		$result = $query_result->result();
+		return $result;
+	}
+	
+	public function select_recent_blog(){
+		$sql ="select * from tbl_blog order by blog_id desc limit 0,3";
+		
+		$query_result = $this->db->query($sql);
+		$result = $query_result->result();
+		return $result;
+	}
 }

@@ -1,10 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>BlackPod | <?php echo $title; ?></title>
+<title>JahedBlog | <?php echo $title; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="<?php echo base_url();?>css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/coin-slider.css" />
+
+<!-- The fav icon -->
+<link rel="shortcut icon" href="<?php echo base_url();?>images/favicon.png">
+	
 <script type="text/javascript" src="<?php echo base_url();?>js/cufon-yui.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/cufon-aller.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.4.2.min.js"></script>
@@ -16,17 +20,28 @@
   <div class="header">
     <div class="header_resize">
       <div class="logo">
-        <h1><a href="#">black<span>pod</span> <small>Company Slogan Goes Here</small></a></h1>
+        <h1><a href="#">Jahed<span> Blog</span> <small>Information Technology, The Power on Your Side</small></a></h1>
       </div>
       <div class="menu_nav">
         <ul>
-          <li class="active"><a href="<?php echo base_url();?>welcome/index"><span>Home Page</span></a></li>
-          <li><a href="<?php echo base_url();?>welcome/support"><span>Support</span></a></li>
-          <li><a href="<?php echo base_url();?>welcome/about"><span>About Us</span></a></li>
-          <!--<li><a href="<?php echo base_url();?>welcome/blog"><span>Blog</span></a></li>
-          <li><a href="<?php echo base_url();?>welcome/contact"><span>Contact Us</span></a></li>-->
-          <li><a href="<?php echo base_url();?>welcome/login"><span>Login</span></a></li>
-          <li><a href="<?php echo base_url();?>welcome/sign_up"><span>Sign Up</span></a></li>
+			<li><a href="<?php echo base_url();?>welcome/index"><span>Home</span></a></li>
+            <li><a href="<?php echo base_url();?>welcome/support"><span>Support</span></a></li>
+            <li><a href="<?php echo base_url();?>welcome/about"><span>About Me</span></a></li>
+			<!--<li><a href="<?php echo base_url();?>welcome/blog"><span>Blog</span></a></li>
+			<li><a href="<?php echo base_url();?>welcome/contact"><span>Contact Us</span></a></li>-->
+			<?php 
+			$user_id = $this->session->userdata('user_id');
+			if($user_id == NULL){	
+			?>
+			<li><a href="<?php echo base_url();?>welcome/login"><span>Login</span></a></li>
+			<li><a href="<?php echo base_url();?>welcome/sign_up"><span>Sign Up</span></a></li>
+			<?php 
+			}else{ 
+			?>
+			<li><a href="<?php echo base_url();?>welcome/logout"><span>Logout</span></a></li>
+			<?php 
+			}
+			?>
         </ul>
       </div>
       <div class="clr"></div>
@@ -58,8 +73,20 @@
             <input name="button_search" src="<?php echo base_url();?>images/search.gif" class="button_search" type="image" />
           </form>
         </div>
+		<div class="clr"></div>
+		<?php
+		$user_id = $this->session->userdata('user_id');
+		if($user_id != NULL){
+		?>	
+			<div class="gadget">
+				<h2 class="star">Welcome</h2>
+				<div class="clr"></div>
+				<span>Hello, <b><?php echo $this->session->userdata('user_name'); ?></b></span>
+			</div>	
+		
         <div class="clr"></div>
-		<?php 
+		<?php
+		}		
 		if($menu)
 		{	
 		?>
@@ -82,22 +109,17 @@
 		{	
 		?>
         <div class="gadget">
-          <h2 class="star"><span>Sponsors</span></h2>
-          <div class="clr"></div>
-          <ul class="ex_menu">
-            <li><a href="http://www.dreamtemplate.com/">DreamTemplate</a><br />
-              Over 6,000+ Premium Web Templates</li>
-            <li><a href="http://www.templatesold.com/">TemplateSOLD</a><br />
-              Premium WordPress &amp; Joomla Themes</li>
-            <li><a href="http://www.imhosted.com/">ImHosted.com</a><br />
-              Affordable Web Hosting Provider</li>
-            <li><a href="http://www.megastockphotos.com/">MegaStockPhotos</a><br />
-              Unlimited Amazing Stock Photos</li>
-            <li><a href="http://www.evrsoft.com/">Evrsoft</a><br />
-              Website Builder Software &amp; Tools</li>
-            <li><a href="http://www.csshub.com/">CSS Hub</a><br />
-              Premium CSS Templates</li>
-          </ul>
+			<h2 class="star"><span>Recent Blog</span></h2>
+			<div class="clr"></div>
+			<ul class="ex_menu">
+			<?php 
+			foreach($recent_blog as $r_blog){
+			?>
+				<li><a href="<?php echo base_url();?>welcome/blog_details/<?php echo $r_blog->blog_id;?>"><?php echo $r_blog->blog_title; ?></a></li>
+			<?php
+			}
+			?>
+			</ul>
         </div>
 		<?php 
 		}
@@ -134,11 +156,11 @@
   </div>
   <div class="footer">
     <div class="footer_resize">
-      <p class="lf">&copy; Copyright <a href="#">MyWebSite</a>.</p>
-      <p class="rf">Design by Dream <a href="http://www.dreamtemplate.com/">Web Templates</a></p>
+      <p class="lf">&copy; Copyright <a href="#">Jahed</a>.</p>
+      <p class="rf">Design by <a href="#">Jahed Jony</a></p>
       <div style="clear:both;"></div>
     </div>
   </div>
 </div>
-<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+</body>
 </html>
